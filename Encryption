@@ -1,0 +1,34 @@
+package project1;
+
+import java.util.Scanner;
+
+public class Encryption 
+{
+
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter a string:");
+		String n=sc.nextLine();
+		String output="";
+		
+		for(int i=0;i<n.length();i++)
+		{
+			char c=n.charAt(i);
+			
+			if(c>='A' && c<='Z')
+			{
+				c=(char)((c-'A'-2+26)%26+'A');
+			}
+			else if(c>='a' && c<='z')
+			{
+				c=(char)((c-'a'-3+26)%26+'a');
+			}
+			output +=c;
+		}
+		System.out.println("Output :" +output);
+
+	}
+
+}
+
